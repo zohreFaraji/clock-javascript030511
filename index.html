@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: stardos;
+            src: url(font/StardosStencil-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background-image: url(img/1.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 110%;
+            margin: 0 120px;
+            height: 100vh;
+
+            .header {
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+                -webkit-text-stroke: 2px red;
+                text-shadow: 0 0 4px red;
+                animation: animeTxt 3s infinite alternate;
+                font-size: 120px;
+                font-weight: bold;
+                font-family: stardos;
+            }
+
+            .between {
+                display: flex;
+                justify-content: space-around;
+
+                .boxCol {
+                    justify-content: center;
+                    width: 340px;
+                    display: flex;
+                    align-items: start;
+
+                    >.box {
+                        position: relative;
+                        width: 340px;
+                        height: 65px;
+                        top: 50px;
+                        left: 117px;
+
+                        >.square1 {
+                            position: absolute;
+                            top: 3%;
+                            left: -60px;
+                            z-index: -1;
+                            border: none;
+                            outline: none;
+                            width: 70px;
+                            height: 70px;
+                            transform: rotate(45deg);
+                            background-color: #272626;
+                            box-shadow: 0 0 10px hsl(0, 0%, 11%), 0 0 20px hsl(0, 0%, 11%), 0 0 50px hsl(0, 0%, 11%), 0 0 80px hsl(0, 0%, 11%);
+                            animation: pulsate4 1.5s infinite alternate;
+
+                        }
+
+                        >.circle1 {
+                            position: absolute;
+                            bottom: -100%;
+                            right: -350px;
+                            z-index: -1;
+                            background-color: red;
+                            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+                            border-radius: 50%;
+                            width: 80px;
+                            height: 80px;
+                            animation: pulsate3 1.5s infinite alternate;
+
+                        }
+
+                        >.box2 {
+                            width: 340px;
+                            height: 68px;
+                            position: absolute;
+                            top: 30px;
+                            left: -30px;
+                            z-index: 999;
+                            background-color: rgb(20, 20, 20);
+                            border-top-left-radius: 10%;
+                            border-bottom-right-radius: 10%;
+
+                            >.sp {
+                                width: 340px;
+                                height: 68px;
+                                position: relative;
+                                z-index: -1;
+                                background: transparent;
+                                overflow: hidden;
+                                border-top: 2px solid rgba(255, 49, 49, 0.5);
+                                border-right: 2px solid rgba(0, 255, 255, 0.5);
+                                border-bottom: 2px solid rgba(57, 255, 20, 0.5);
+                                border-left: 2px solid rgba(255, 255, 113, 0.5);
+
+                                >* {
+                                    position: absolute;
+                                }
+
+                                >.top {
+                                    top: 0;
+                                    left: 0;
+                                    height: 5px;
+                                    background: linear-gradient(90deg,
+                                            transparent 50%,
+                                            rgba(255, 49, 49, 0.5),
+                                            rgb(255, 49, 49));
+                                }
+
+                                >.bottom {
+                                    right: 7%;
+                                    bottom: 0;
+                                    height: 5px;
+                                    background: linear-gradient(90deg,
+                                            rgb(57, 255, 20),
+                                            rgba(57, 255, 20, 0.5),
+                                            transparent 50%);
+                                }
+
+                                >.right {
+                                    top: 0;
+                                    right: 0;
+                                    width: 5px;
+                                    height: 0;
+                                    background: linear-gradient(180deg,
+                                            transparent 30%,
+                                            rgba(0, 255, 255, 0.5),
+                                            rgb(0, 255, 255));
+                                }
+
+                                >.left {
+                                    left: 0;
+                                    bottom: 0;
+                                    width: 5px;
+                                    height: 0;
+                                    background: linear-gradient(180deg,
+                                            rgb(255, 255, 113),
+                                            rgba(255, 255, 113, 0.5),
+                                            transparent 70%);
+                                }
+
+                                .top {
+                                    animation: animateTop 3s ease-in-out infinite;
+                                }
+
+                                .bottom {
+                                    animation: animateBottom 3s ease-in-out infinite;
+                                }
+
+                                .right {
+                                    animation: animateRight 3s ease-in-out infinite;
+                                }
+
+                                .left {
+                                    animation: animateLeft 3s ease-in-out infinite;
+                                }
+                            }
+
+                            >.txt1 {
+                                display: flex;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                                z-index: 1000;
+                                color: white;
+                                font-size: 37px;
+                                text-align: center;
+                                text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+                            }
+                        }
+                    }
+
+                    .frameTxt {
+                        position: relative;
+                        top: 50%;
+                        width: 450px;
+                        height: 230px;
+                        margin: 0 60px;
+                        z-index: 999;
+                        box-shadow: 20px 20px 50px #D31031;
+                        border-top-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+
+                        >p {
+                            display: flex;
+                            position: absolute;
+                            align-items: center;
+                            font-size: 17px;
+                            color: white;
+                            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                            padding: 24px 20px;
+                            line-height: 28px;
+                            text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+                        }
+
+                        >.sp {
+                            width: 450px;
+                            height: 230px;
+                            position: relative;
+                            z-index: -1;
+                            background: transparent;
+                            overflow: hidden;
+                        }
+
+                        .frame {
+                            width: 280px;
+                            height: 200px;
+                            display: flex;
+                            justify-content: space-around;
+                            position: absolute;
+                            top: 100px;
+
+                            >img {
+                                width: 80px;
+                                height: 100px;
+                                animation: pulsate2 1.5s infinite alternate;
+                                display: flex;
+                                justify-content: space-between;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                div {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    .circle {
+                        width: 420px;
+                        height: 520px;
+                        z-index: 1;
+                        border-radius: 50%;
+                        background-color: black;
+                        position: relative;
+                        animation: pulsate 3s infinite alternate;
+                        /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.935), 0 0 20px rgba(255, 0, 0, 0.935), 0 0 30px rgba(255, 0, 0, 0.935), 0 0 40px rgba(255, 0, 0, 0.935); */
+
+                        >.centerCircle {
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            background-color: red;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+
+                            >span {
+                                display: flex;
+                                position: absolute;
+                                z-index: 3;
+                                width: 4px;
+                                transform-origin: bottom;
+                                bottom: 50%;
+                                left: 50%;
+                                align-items: center;
+                                background-color: red;
+                                border-bottom-left-radius: 50%;
+                                border-top-left-radius: 50%;
+                                box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+
+                                &:nth-of-type(1) {
+                                    height: 143px;
+                                }
+
+                                &:nth-of-type(2) {
+                                    height: 130px;
+                                }
+
+                                &:nth-of-type(3) {
+                                    height: 85px;
+                                }
+                            }
+                        }
+
+                        .aghrabe {
+                            display: flex;
+                            position: fixed;
+                            width: 5px;
+                            height: 14px;
+                            background-color: red;
+                            position: absolute;
+                            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+
+                            &:nth-of-type(1) {
+                                top: 48%;
+                                left: 8%;
+                                transform: rotate(90deg);
+                            }
+
+                            &:nth-of-type(2) {
+                                top: 91%;
+                                left: 50%;
+                            }
+
+                            &:nth-of-type(3) {
+                                top: 48%;
+                                left: 91%;
+                                transform: rotate(90deg);
+                            }
+
+                            &:nth-of-type(4) {
+                                top: 6%;
+                                left: 50%;
+                            }
+                        }
+
+                        .number {
+                            position: absolute;
+                            font-size: 24px;
+                            transform: translate(-50%, -50%);
+                            color: white;
+                            font-family: stardos;
+                            font-size: 30px;
+                        }
+
+                        .number1 {
+                            top: 20%;
+                            left: 80%;
+                        }
+
+                        .number2 {
+                            top: 35%;
+                            left: 87%;
+                        }
+
+                        .number3 {
+                            top: 50%;
+                            left: 87%;
+                        }
+
+                        .number4 {
+                            top: 65%;
+                            left: 85%;
+                        }
+
+                        .number5 {
+                            top: 80%;
+                            left: 80%;
+                        }
+
+                        .number6 {
+                            top: 88%;
+                            left: 50%;
+                        }
+
+                        .number7 {
+                            top: 80%;
+                            left: 20%;
+                        }
+
+                        .number8 {
+                            top: 65%;
+                            left: 14%;
+                        }
+
+                        .number9 {
+                            top: 50%;
+                            left: 13%;
+                        }
+
+                        .number10 {
+                            top: 35%;
+                            left: 15%;
+                        }
+
+                        .number11 {
+                            top: 20%;
+                            left: 22%;
+                        }
+
+                        .number12 {
+                            top: 14%;
+                            left: 50%;
+                        }
+
+                        >.square>img {
+                            width: 420px;
+                            height: 520px;
+                            z-index: 3;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes pulsate2 {
+
+            0% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1.01);
+            }
+        }
+
+        @keyframes pulsate {
+
+            0% {
+                box-shadow: 0 0 2px rgba(255, 0, 0, 0.935), 0 0 6px rgba(255, 0, 0, 0.935), 0 0 15px rgba(255, 0, 0, 0.935), 0 0 20px rgba(255, 0, 0, 0.935);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 4px rgba(255, 0, 0, 0.935),
+                    0 0 11px rgba(255, 0, 0, 0.935),
+                    0 0 19px rgba(255, 0, 0, 0.935),
+                    0 0 40px rgba(255, 0, 0, 0.935),
+                    0 0 70px rgba(255, 0, 0, 0.935),
+                    0 0 80px rgba(255, 0, 0, 0.935),
+                    0 0 100px rgba(212, 32, 32, 0.935);
+            }
+        }
+
+        @keyframes pulsate3 {
+            0% {
+                box-shadow: 0 0 8px red, 0 0 13px red, 0 0 15px red, 0 0 20px red;
+            }
+
+            100% {
+                box-shadow:
+                    0 0 8px red,
+                    0 0 40px red,
+                    0 0 60px red,
+                    0 0 90px red,
+                    0 0 140px red,
+                    0 0 180px red,
+                    0 0 200px red,
+            }
+        }
+
+        @keyframes pulsate4 {
+            0% {
+                box-shadow: 0 0 8px #363536, 0 0 13px #363536, 0 0 15px #363536, 0 0 20px #363536;
+            }
+
+            100% {
+                box-shadow:
+                    0 0 8px #363536,
+                    0 0 40px #363536,
+                    0 0 60px #363536,
+                    0 0 90px #363536,
+                    0 0 140px #363536,
+                    0 0 180px #363536,
+                    0 0 200px #363536,
+            }
+        }
+
+        @keyframes animateTop {
+
+            0%,
+            25% {
+                width: 0;
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+                width: 100%;
+            }
+
+            70%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes animateBottom {
+
+            0%,
+            50% {
+                opacity: 0;
+                width: 0;
+            }
+
+            75% {
+                opacity: 1;
+                width: 100%;
+            }
+
+            76%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes animateRight {
+
+            0%,
+            25% {
+                opacity: 0;
+                height: 0;
+            }
+
+            50% {
+                opacity: 1;
+                height: 100%;
+            }
+
+            55%,
+            100% {
+                height: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes animateLeft {
+
+            0%,
+            75% {
+                opacity: 0;
+                bottom: 0;
+                height: 0;
+            }
+
+            100% {
+                opacity: 1;
+                height: 100%;
+            }
+        }
+
+        @keyframes animeTxt {
+            0% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 0.9;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes anime4 {
+            0% {
+                border-radius: 20px;
+                border: 2px solid rgba(255, 49, 49, 0.5);
+            }
+
+            33% {
+                border-radius: 20px;
+                border: 2px solid rgba(0, 255, 255, 0.5);
+            }
+
+            66% {
+                border-radius: 20px;
+                border: 2px solid rgba(57, 255, 20, 0.5);
+            }
+
+            100% {
+                border-radius: 20px;
+                border: 2px solid rgba(255, 255, 113, 0.5);
+            }
+        }
+
+        @keyframes anime5 {
+            0% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1.01);
+            }
+        }
+
+        /* start bottomFixedImage */
+        .bottomImage {
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            width: 200px;
+            height: 110px;
+
+            >.imgFixed {
+                width: 90px;
+                height: 90px;
+                position: fixed;
+                bottom: 33px;
+                right: 40px;
+                z-index: 1000;
+                animation: anime5 1.5s infinite alternate;
+
+                >img {
+                    width: 110%;
+                    height: 110%;
+                    border: 6px solid rgba(54, 54, 54, 0.062);
+                    animation: anime4 3s infinite alternate;
+                    transform: rotate(15deg);
+                    object-fit: cover;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 999;
+                    transition: all .6s ease-in-out;
+                    box-shadow: 4px 5px 6px 5px red;
+                    /* box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red; */
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: perspective(700px) rotateY(10deg);
+                    }
+                }
+
+                >a {
+                    width: 40px;
+                    height: 40px;
+                    z-index: 998;
+                    position: fixed;
+                    bottom: 50px;
+                    right: 38px;
+                    transition: all 1s ease-in-out;
+                    border: 2px solid red;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.616);
+
+
+                    >i {
+                        color: black;
+                        font-size: 20px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05);
+                        background-color: rgb(245, 78, 78);
+                        border: 3px solid #e2e1e1;
+
+                        filter: hue-rotate(40%) brightness(110%) contrast(120%);
+
+                        >i {
+                            /* color: rgb(37, 37, 37); */
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            &:hover>.imgFixed>a {
+
+                &:nth-of-type(1) {
+                    bottom: -4px;
+                    right: 110px;
+                }
+
+                &:nth-of-type(2) {
+                    bottom: 43px;
+                    right: 110px;
+                }
+
+                &:nth-of-type(3) {
+
+                    bottom: 90px;
+                    right: 110px;
+                }
+            }
+        }
+
+        /* end bottomFixedImage */
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- start bottomFixedImage -->
+        <div class="bottomImage">
+            <figure class="imgFixed"><img src="img/img/4.png" alt="">
+                <a href="https://github.com/zohreFaraji"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/zohre-faraji-41822315a/"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/zohrefaraji212/"><i class="bi bi-instagram"></i></a>
+            </figure>
+        </div>
+        <!-- end bottomFixedImage -->
+        <p class="header">Clock </p>
+        <div class="between">
+            <div>
+                <div class="circle">
+                    <div class="clock">
+                        <div class="number number1">1</div>
+                        <div class="number number2">2</div>
+                        <span class="aghrabe"></span>
+                        <div class="number number3">3</div>
+                        <div class="number number4">4</div>
+                        <div class="number number5">5</div>
+                        <span class="aghrabe"></span>
+                        <div class="number number6">6</div>
+                        <div class="number number7">7</div>
+                        <div class="number number8">8</div>
+                        <span class="aghrabe"></span>
+                        <div class="number number9">9</div>
+                        <div class="number number10">10</div>
+                        <div class="number number11">11</div>
+                        <span class="aghrabe"></span>
+                        <div class="number number12">12</div>
+                    </div>
+
+                    <div class="centerCircle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="square">
+                        <img src="img/frame_apple_hue0.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="boxCol">
+                <div class="box">
+                    <span class="square1"></span>
+                    <span class="circle1"></span>
+                    <span class="box2">
+                        <div class="sp"><span class="top"></span>
+                            <span class="right"></span>
+                            <span class="bottom"></span>
+                            <span class="left"></span>
+                        </div>
+                        <div class="txt1">
+                            <span class="hourDigit"></span>
+                            <span class="minDigit"></span>
+                            <span class="secondDigit"></span>
+                        </div>
+                    </span>
+                </div>
+                <div class="frameTxt">
+                    <p>If you want to change the watch frame, please select one of the available case 🤗️💫️</p>
+                    <div class="frame">
+                        <img src="img/frame_apple3.png" alt="">
+                        <img src="img/frame_apple_hue0.png" alt="">
+                    </div>
+
+                    <div class="sp">
+                        <!-- <span class="top"></span>
+                        <span class="right"></span>
+                        <span class="bottom"></span>
+                        <span class="left"></span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+
+        // clock analog
+        const square = document.querySelector('.square>img')
+        const imgs = document.querySelectorAll('.frameTxt>.frame>img')
+        imgs.forEach(val => {
+            val.addEventListener('click', () => {
+                let imgSrc = val.getAttribute('src')
+                square.setAttribute('src', imgSrc)
+            })
+        })
+        const span = document.querySelectorAll('.circle>.centerCircle>span')
+        setInterval(() => {
+            const time = new Date()
+            span[0].style.transform = 'rotate(' + (time.getSeconds()) * 6 + 'deg)'
+            span[1].style.transform = 'rotate(' + (time.getMinutes()) * 6 + 'deg)'
+            span[2].style.transform = 'rotate(' + (time.getHours() * 30 + time.getMinutes() * 0.5) + 'deg)'
+
+
+            // clock digit
+            const hourDigit = document.querySelector('.box>.box2>.txt1>.hourDigit')
+            const minDigit = document.querySelector('.box>.box2>.txt1>.minDigit')
+            const secondDigit = document.querySelector('.box>.box2>.txt1>.secondDigit')
+            let hour1 = time.getHours()
+            let min1 = time.getMinutes()
+            let second1 = time.getSeconds()
+            if (hour1 <= 9) {
+                hourDigit.innerHTML = '0' + hour1 + ':';
+            } else {
+
+                hourDigit.innerHTML = hour1 + ':';
+            }
+            if (min1 <= 9) {
+                minDigit.innerHTML = '0' + min1 + ':';
+            } else {
+
+                minDigit.innerHTML = min1 + ':';
+            }
+            if (second1 <= 9) {
+                secondDigit.innerHTML = '0' + second1;
+            } else {
+
+                secondDigit.innerHTML = second1;
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
